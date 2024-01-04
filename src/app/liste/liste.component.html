@@ -16,9 +16,9 @@
         </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a routerLink="/" routerLinkActive="active" class="nav-item nav-link">Accueil</a>
-                        <a routerLink="liste" class="nav-item nav-link">Liste de Réservations</a>
-                        <a routerLink="reservation" class="nav-item nav-link">Réservation</a>
+                        <a routerLink="/" class="nav-item nav-link">Accueil</a>
+                        <a routerLink="/liste" routerLinkActive="active" class="nav-item nav-link">Liste de Réservations</a>
+                        <a routerLink="/reservation" class="nav-item nav-link">Réservation</a>
                         <a routerLink="#" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
@@ -36,7 +36,9 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a routerLink="#">Accueil</a></li>
-                    <li class="breadcrumb-item"><a routerLink="#">Pages</a></li>
+                    <li class="breadcrumb-item">
+                        <a routerLink="/reservation">Réservation</a>
+                    </li>
                     <li class="breadcrumb-item text-white active" aria-current="page">Liste de Réservations</li>
                 </ol>
             </nav>
@@ -47,6 +49,33 @@
 
 <div class="container-fluid">
     <h1 class="text-center">Liste Enregistrée</h1>
+    <div>
+        <!-- liste.component.html -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Date debut</th>
+                    <th scope="col">Date-fin</th>
+                    <!-- Ajoutez d'autres colonnes en fonction de votre modèle -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reservation of reservations">
+                    <td>{{ reservation.nom }}</td>
+                    <td>{{ reservation.Client }}</td>
+                    <td>{{ reservation.titre }}</td>
+                    <td>{{ reservation.df }}</td>
+                    <td>{{ reservation.dd }}</td>
+                    <!-- Ajoutez d'autres cellules en fonction de votre modèle -->
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
 </div>
 
 <!-- Footer Start -->

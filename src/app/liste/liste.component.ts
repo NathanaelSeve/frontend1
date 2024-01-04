@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { reservation } from '../model/reservation';
+import { ReservationService } from '../services/reservation.service';
 
 @Component({
   selector: 'app-liste',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./liste.component.css']
 })
 export class ListeComponent implements OnInit {
+  reservations: reservation[] | undefined;
 
-  constructor() { }
+  constructor(private reservationService: ReservationService) { }
 
   ngOnInit(): void {
+    this.reservationService.getReservations().subscribe(reservations => {
+      this.reservations = reservations;
+    });
   }
-
 }

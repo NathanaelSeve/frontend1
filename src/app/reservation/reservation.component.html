@@ -15,13 +15,13 @@
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a routerLink="/" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                    <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                         <h1 class="m-0 text-primary text-uppercase">O'Salle</h1>
                     </a>
                 </div>
                 <div class="col-lg-9">
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <a routerLink="/" class="navbar-brand d-block d-lg-none">
+                        <a routerLink="accueil" class="navbar-brand d-block d-lg-none">
                             <h1 class="m-0 text-primary text-uppercase">O'Salle</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -30,8 +30,8 @@
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
                                 <a routerLink="/" class="nav-item nav-link">Accueil</a>
-                                <a routerLink="liste" class="nav-item nav-link">liste de réservation</a>
-                                <a routerLink="reservation" routerLinkActive="active" class="nav-item nav-link">Réservation</a>
+                                <a routerLink="/liste" class="nav-item nav-link">Liste de Réservations</a>
+                                <a routerLink="/reservation" routerLinkActive="active" class="nav-item nav-link">Réservation</a>
                                 <a routerLink="#" class="nav-item nav-link">Contact</a>
                             </div>
                         </div>
@@ -40,7 +40,6 @@
             </div>
         </div>
         <!-- Header End -->
-
         <!-- Page Header Start -->
         <div class="container-fluid page-header mb-5 p-0" style="background-image: url(./assets/img/carousel-1.jpg);">
             <div class="container-fluid page-header-inner py-5">
@@ -49,7 +48,9 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a routerLink="/">Accueil</a></li>
-                            <li class="breadcrumb-item"><a routerLink="liste">Pages</a></li>
+                            <li class="breadcrumb-item">
+                                <a routerLink="/liste">liste de Réservations</a>
+                            </li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Réservation</li>
                         </ol>
                     </nav>
@@ -57,235 +58,165 @@
             </div>
         </div>
         <!-- Page Header End -->
-
-
-        <!-- Booking Start -->
-        <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="bg-white shadow" style="padding: 35px;">
-                    <div class="row g-2">
-                        <div class="col-md-10">
-                            <div class="row g-2">
-                                <div class="col-md-3">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>SELECTION DE OUTIL DE LA SALLE</option>
-                                        <option value="1">Non selectionner</option>
-                                        <option value="2">PROJECTEUR</option>
-                                        <option value="3">TABLEAU</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>NOMBRE DE PLACE</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary w-100">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Booking End -->
-
-
         <!-- Booking Start -->
         <div class="card">
             <div class="container-xxl py-5">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h1 class="section-title text-center text-primary text-uppercase">FORMULAIRE D'ENREGISTREMENT</h1>
                 </div>
-                <div class="row g-5">
-                    <div class="col-lg-6">
-                        <div class="row g-3">
-                            <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="./assets/img/about-1.jpg" style="margin-top: 25%;">
-                            </div>
-                            <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="./assets/img/about-2.jpg">
-                            </div>
-                            <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="./assets/img/about-3.jpg">
-                            </div>
-                            <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="./assets/img/about-4.jpg">
-                            </div>
+                <form>
+
+                    <div class="row">
+                        <div class="col mb-4">
+                            <input type="text" class="form-control" name="client" placeholder="Client" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="demandeur" placeholder="Demandeur" required>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <div class="col-md-6">
-                                                <select class="form-select">
-                                                    <option selected>Client</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Demandeur</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating date" id="date3" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
-                                            <label for="checkin">Check In</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating date" id="date4" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
-                                            <label for="checkout">Check Out</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="select1">
-                                                <option value="1">Non selectionner</option>
-                                              <option value="2">PROJECTEUR</option>
-                                              <option value="3">TABLEAU</option>
-                                            </select>
-                                            <label for="select1">SELECTION DE OUTIL DE LA SALLE</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="select2">
-                                              <option value="1">1</option>
-                                              <option value="2">2</option>
-                                              <option value="3">3</option>
-                                            </select>
-                                            <label for="select2">Select Child</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                            <label for="message">Special Request</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Enregistrer</button>
-                                    </div>
-                                </div>
-                            </form>
+
+                    <div class="row">
+                        <div class="col mb-4">
+                            <input type="number" class="form-control" name="place" placeholder="Place">
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" name="roomNumber" placeholder="Numéro de Salle" required>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" name="Titre" placeholder="Titre" required>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" list="browsers" name="browser" id="browser" placeholder="choisir les appareils pour la réunion">
+                            <datalist id="browsers">
+                          <option value="Projecteur, Tableau de projection">
+                          <option value="Climateur">
+                        </datalist>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col mb-4">
+                            <label>Date de débute</label>
+                            <input type="date" class="form-control" name="date-debut" placeholder="Date de débute">
+                        </div>
+                        <div class="col mb-4">
+                            <label>Date de fin</label>
+                            <input type="date" class="form-control" name="date-debut" placeholder="Date de fin" required>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="text-right">
+                    <button id="btnSave" class="btn btn-primary">Sauvegarder</button>
                 </div>
+
+                <!-- Affichage du numéro de salle ou du message d'erreur -->
+                <div id="roomNumberContainer"></div>
+
             </div>
-            <!-- Booking End -->
-
-
-            <!-- Newsletter Start -->
-            <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 border rounded p-1">
-                        <div class="border rounded text-center p-1">
-                            <div class="bg-white rounded text-center p-5">
-                                <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
-                                <div class="position-relative mx-auto" style="max-width: 400px;">
-                                    <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                    <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Newsletter Start -->
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
-                <div class="container pb-5">
-                    <div class="row g-5">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="bg-primary rounded p-4">
-                                <a href="index.html">
-                                    <h1 class="text-white text-uppercase mb-3">O'salle</h1>
-                                </a>
-                                <p class="text-white mb-0">
-                                    Download <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">O'Salle – Premium Version</a>, build a professional website for your hotel business and grab the attention of new visitors
-                                    upon your site’s launch.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
-                            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Ouagadougou, BURKINA FASO</p>
-                            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+226 76260000</p>
-                            <div class="d-flex pt-2">
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-12">
-                            <div class="row gy-5 g-4">
-                                <div class="col-md-6">
-                                    <h6 class="section-title text-start text-primary text-uppercase mb-4">Orange BF</h6>
-                                    <a class="btn btn-link" href="">About Us</a>
-                                    <a class="btn btn-link" href="">Contact Us</a>
-                                    <a class="btn btn-link" href="">Privacy Policy</a>
-                                    <a class="btn btn-link" href="">Terms & Condition</a>
-                                    <a class="btn btn-link" href="">Support</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="copyright">
-                        <div class="row">
-                            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                                Designed By <a class="border-bottom" href="#"> Sévérin ILBOUDO</a>
-                            </div>
-                            <div class="col-md-6 text-center text-md-end">
-                                <div class="footer-menu">
-                                    <a href="">Home</a>
-                                    <a href="">Cookies</a>
-                                    <a href="">Help</a>
-                                    <a href="">FQAs</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
-
-
-            <!-- Back to Top -->
-            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
+        <!-- Booking End -->
+
+        <!-- Newsletter Start -->
+        <div class="container newsletter mt-5 wow fadeIn " data-wow-delay="0.1s ">
+            <div class="row justify-content-center ">
+                <div class="col-lg-10 border rounded p-1 ">
+                    <div class="border rounded text-center p-1 ">
+                        <div class="bg-white rounded text-center p-5 ">
+                            <h4 class="mb-4 ">Subscribe Our <span class="text-primary text-uppercase ">Newsletter</span></h4>
+                            <div class="position-relative mx-auto " style="max-width: 400px; ">
+                                <input class="form-control w-100 py-3 ps-4 pe-5 " type="text " placeholder="Enter your email ">
+                                <button type="button " class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2 ">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter Start -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer wow fadeIn " data-wow-delay="0.1s ">
+            <div class="container pb-5 ">
+                <div class="row g-5 ">
+                    <div class="col-md-6 col-lg-4 ">
+                        <div class="bg-primary rounded p-4 ">
+                            <a href="index.html ">
+                                <h1 class="text-white text-uppercase mb-3 ">O'salle</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 ">
+                        <h6 class="section-title text-start text-primary text-uppercase mb-4 ">Contact</h6>
+                        <p class="mb-2 "><i class="fa fa-map-marker-alt me-3 "></i>123 Street, Ouagadougou, BURKINA FASO</p>
+                        <p class="mb-2 "><i class="fa fa-phone-alt me-3 "></i>+226 76260000</p>
+                        <div class="d-flex pt-2 ">
+                            <a class="btn btn-outline-light btn-social " href=" "><i class="fab fa-twitter "></i></a>
+                            <a class="btn btn-outline-light btn-social " href=" "><i class="fab fa-facebook-f "></i></a>
+                            <a class="btn btn-outline-light btn-social " href=" "><i class="fab fa-youtube "></i></a>
+                            <a class="btn btn-outline-light btn-social " href=" "><i class="fab fa-linkedin-in "></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 ">
+                        <div class="row gy-5 g-4 ">
+                            <div class="col-md-6 ">
+                                <h6 class="section-title text-start text-primary text-uppercase mb-4 ">Orange BF</h6>
+                                <a class="btn btn-link " href=" ">About Us</a>
+                                <a class="btn btn-link " href=" ">Contact Us</a>
+                                <a class="btn btn-link " href=" ">Privacy Policy</a>
+                                <a class="btn btn-link " href=" ">Terms & Condition</a>
+                                <a class="btn btn-link " href=" ">Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container ">
+                <div class="copyright ">
+                    <div class="row ">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 ">
+                            &copy; <a class="border-bottom " href="#
+                                ">Your Site Name</a>, All Right Reserved.
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal ". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom " href="# "> Sévérin ILBOUDO</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end ">
+                            <div class="footer-menu ">
+                                <a href=" ">Home</a>
+                                <a href=" ">Cookies</a>
+                                <a href=" ">Help</a>
+                                <a href=" ">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="# " class="btn btn-lg btn-primary btn-lg-square back-to-top "><i class="bi bi-arrow-up "></i></a>
     </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        document.getElementById('btnSave').addEventListener('click', function() {
+            var selectedPlaces = parseInt(document.querySelector('input[name="place"]').value);
+            var totalPlaces = 30;
+
+            if (selectedPlaces === totalPlaces) {
+                var roomNumber = parseInt(document.querySelector('input[name="roomNumber"]').value);
+                document.getElementById('roomNumberContainer').innerHTML = 'Numéro de salle : ' + roomNumber;
+            } else {
+                document.getElementById('roomNumberContainer').innerHTML = 'Le nombre de places ne correspond pas.';
+            }
+        });
+    </script>
 </body>
 
 </html>
